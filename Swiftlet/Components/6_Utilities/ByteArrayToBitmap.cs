@@ -41,6 +41,7 @@ namespace Swiftlet.Components
         protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
         {
             pManager.AddParameter(new BitmapParam(),"Bitmap", "B", "Output bitmap", GH_ParamAccess.item);
+            pManager.AddGenericParameter("Raw Bitmap", "RB", "Output bitmap", GH_ParamAccess.item);
         }
 
         /// <summary>
@@ -60,6 +61,7 @@ namespace Swiftlet.Components
 
             BitmapGoo output = new BitmapGoo(bmp);
             DA.SetData(0, output);
+            DA.SetData(1, bmp);
         }
 
         /// <summary>

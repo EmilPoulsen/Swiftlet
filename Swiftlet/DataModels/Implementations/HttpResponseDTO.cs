@@ -1,10 +1,12 @@
 ﻿using Swiftlet.DataModels.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Swiftlet.DataModels.Implementations
@@ -48,10 +50,28 @@ namespace Swiftlet.DataModels.Implementations
                 value = value.Substring(0, value.Length - 1);
                 this.Headers.Add(new HttpHeader(key, value));
             }
+            foreach (var header in response.Content.Headers)
+            {
+                string key = header.Key;
+                string value = string.Empty;
+
+                foreach (string h in header.Value)
+                {
+                    value += h + ",";
+                }
+
+                value = value.Substring(0, value.Length - 1);
+                this.Headers.Add(new HttpHeader(key, value));
+            }
 
             this.IsSuccessStatusCode = response.IsSuccessStatusCode;
             this.Content = response.Content.ReadAsStringAsync().Result;
             this.Bytes = response.Content.ReadAsByteArrayAsync().Result.ToArray();
+
+            //response.Content.
+            var c = new MultipartContent();
+            
+
         }
 
         public HttpResponseDTO(

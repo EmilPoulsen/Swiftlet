@@ -22,5 +22,10 @@ namespace Swiftlet.DataModels.Implementations
             this.Key = key;
             this.Value = value;
         }
+
+        public IEnumerable<KeyValuePair<string, string>> ToKvp()
+        {
+            yield return new KeyValuePair<string, string>(Key, Value);
+        }
     }
 }

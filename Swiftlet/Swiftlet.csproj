@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Swiftlet</RootNamespace>
     <AssemblyName>Swiftlet</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
@@ -93,6 +93,8 @@
     <Compile Include="Components\2_Request\SetJsonKey.cs" />
     <Compile Include="Components\2_Request\CreateUrl.cs" />
     <Compile Include="Components\3_Send\DeconstructHeader.cs" />
+    <Compile Include="Components\3_Send\MultpartUtils.cs" />
+    <Compile Include="Components\3_Send\ResponseToMultipart.cs" />
     <Compile Include="Components\3_Send\DeconstructQueryParam.cs" />
     <Compile Include="Components\3_Send\Throttle.cs" />
     <Compile Include="Components\3_Send\DeconstructUrl.cs" />

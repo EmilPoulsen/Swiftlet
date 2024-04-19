@@ -8,5 +8,6 @@ namespace Swiftlet.DataModels.Interfaces
 {
     public interface IHttpHeader : IKeyValue
     {
+        IEnumerable<KeyValuePair<string, string>> ToKvp();
     }
 }
